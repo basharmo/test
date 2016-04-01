@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<body>
+<h5> </h5>
+
+<div class="container" >
+  <div class="jumbotron"    id="dfr" >
+    <h1>Gymglish Website</h1>  
+   
+  <p class="text-left">Gymglish propose des cours d'anglais en ligne par e-mails quotidiens.Dans chaque leçon, découvrez votre</p>
+  <p class="text-left">épisode de la saga Delavingne à San Francisco : humour,anglais 'business', accents variés ....</p>   
+    
+	
+	<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Learn more</button>
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h3 class="modal-title">my modal </h3>
+        </div>
+                <div class="modal-body">
+                <p>when you click on 'OK' button it should display a message with your firstname in the top of the page</p>
+		       <form>
+			   <ul class="errorMessages"></ul>
+                <div class="form-group">			
+                <label for="usr">Name:</label>
+                <input type="text" class="form-control" id="texte">
+                </div>
+				</form>
+                </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		  <button type="button" class="btn btn-primary" data-dismiss="modal" id="myBtn" onclick="appendT()">OK</button>
+		  
+        </div>
+      </div>
+    </div>
+ </div>
+
+	
+	
+	
+
+	
+	
+  </div>
+
+  <div class="block" style="background-color:white;width:800px;">  Block1 Block2 Block3 Block4</div>
+  
+  
+   <div class="jumbotron">
+    <h1>Gymglish Website</h1>      
+      <p class="text-left">Gymglish propose des cours d'anglais en ligne par e-mails </p>
+	  <p class="text-left">quotidiens.Dans chaque leçon, découvrez votre épisode de la </p>
+	  <p class="text-left">saga Delavingne à San Francisco : humour,anglais 'business',</p> 
+	  <p class="text-left">accents variés ....</p>
+	  <button type="button" class="btn btn-primary">Learn more</button>
+    </div>
+   <div class="block" style="background-color:white;width:800px;">  Block1 Block2</div>
+   <div class="block" style="background-color:white;width:800px;">   Block3 Block4</div>
+   
+</div>
+<script>
+	
+	$(document).ready(function() {
+    $('#myBtn').click(function(e) {
+	var txt11 =document.getElementById("texte");
+        var isValid = true;
+        $('input[type="text"]').each(function() {
+            if ($.trim($(this).val()) == '') {
+                isValid = false;
+                $(this).css({
+                    "border": "1px solid red",
+                    "background": "#FFCECE"
+                });
+            }
+            else {
+                $(this).css({
+                    "border": "",
+                    "background": ""
+                });
+            }
+        });
+        if (isValid == false) 
+            e.preventDefault();
+        else 
+           { $("h5").append(txt11); } 
+    });
+});
+		
+      
+
+				</script>  
+
+</body>
+</html>
